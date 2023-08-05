@@ -2,6 +2,7 @@
 # <h1>SkyCast</h1>
 
 ![Weather App Screenshot](./screenshots/screenshot.png)
+<img src="./screenshots/screenshot.png" alt="screenshorts"/>
 
 Our weather app provides near accurate weather reports 
 
