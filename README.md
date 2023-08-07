@@ -1,8 +1,8 @@
 
 # <h1>SkyCast</h1>
 
-![Weather App Screenshot](./screenshots/screenshot.png)
-<img src="./screenshots/screenshot.png" alt="screenshorts"/>
+
+<img src="screenshot.png" alt="screenshorts"/>
 
 Our weather app provides near accurate weather reports 
 
@@ -50,9 +50,8 @@ To use the weather API in this app, you'll need to obtain an API key:
 
 ## Screenshots
 
-![Screenshot 1](./screenshots/screenshot1.png)
-![Screenshot 2](./screenshots/screenshot2.png)
-![Screenshot 3](./screenshots/screenshot3.png)
+![Screenshot 1](screenshot.png)
+
 
 ## Contributing
 
