@@ -1,33 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather now</title>
-</head>
-<body>
-    <form action="weather" method="get">
-        
-        <input type="text" name="Location" id="" placeholder="Location">
-        <input type="submit" value="check weather">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather - Weather now</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins&family=Space+Grotesk:wght@700&family=Ubuntu:ital,wght@0,400;1,700&display=swap");
 
-        <!-- params={'last_updated':last_updated,'temp_c':temp_c,'temp_f':temp_f,'condition_text':condition_text,'condition_icon':condition_icon,'wind_mph':wind_mph,'wind_kph':wind_kph,'wind_degree':wind_degree,'wind_dir':wind_dir,'pressure_mb':pressure_mb,'precip_in':precip_in,'humidity':humidity,'feelslike_c':feelslike_c,'uv':uv,} -->
-    </form>
-    temperature in c is 
-    {{temp_c}}
-    feels like
-    {{feelslike_c}}
-    last updated 
-    {{last_updated}}
-    condition 
-    {{condition_text}}
-    <img src={{condition_icon}} alt="icorn">
-    wind in mph 
-    {{wind_mph}}
-    wind direction 
-    {{wind_degree}} {{wind_dir}}
-    pressure in milibars
-    {{pressure_mb}}
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* body {
+        box-sizing: border-box;
+      } */
+      .background {
+        background-image: url("img/bjark-DZ975EkUJH0-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: darken;
+      }
+      section {
+        height: 110vh;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+        height: 4vh;
+        background-color: rgba(0, 119, 255, 0.601);
+        position: fixed;
+      }
+      .logo h1 a {
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+        margin-right: 450px;
+        color: white;
+      }
+      .mid-search input[type="text"] {
+        padding: 10px;
+        width: 60%;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(162, 190, 249, 0.348);
+      }
+      .btn {
+        margin-left: 6px;
+        padding: 8px;
+        border: 3px solid yellow;
+        border-radius: 5px;
+        background-color: transparent;
+        color: yellow;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+      }
+      .btn:hover {
+        cursor: pointer;
+        background-color: yellow;
+        border: none;
+        padding: 10px;
+        color: black;
+      }
 
-</body>
+      #date {
+        text-decoration: none;
+        color: white;
+        margin-left: 360px;
+        font-size: 22px;
+        font-family: "Space Grotesk", sans-serif;
+      }
+      #date {
+        cursor: pointer;
+        border: none;
+        border-radius: 20px;
+      }
+      .main {
+        display: flex;
+        flex-direction: column;
+        padding: 100px;
+
+        background-color: rgba(0, 119, 255, 0.601);
+      }
+
+      .text-big {
+        font-size: 4rem;
+        font-family: "Oswald", sans-serif;
+        font-family: "Poppins", sans-serif;
+        margin: 5% 70% 10px 50px;
+
+        color: yellow;
+      }
+      .text-date {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 5px 70% 10px 50px;
+        font-size: 20px;
+        color: yellow;
+      }
+      .text-small {
+        font-size: 20px;
+        font-family: "Space Grotesk", sans-serif;
+        margin: 10px 40% 10px 50px;
+        color: rgb(240, 236, 236);
+      }
+      .btn-big {
+        margin-left: 50px;
+        padding: 8px;
+        border: 3px solid yellow;
+        border-radius: 20px;
+        width: 15%;
+        background-color: transparent;
+        color: yellow;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+        font-size: 18px;
+      }
+      .btn-big:hover {
+        background-color: yellow;
+        border: none;
+        color: black;
+        padding: 10px;
+      }
+      .big-box {
+        display: flex;
+      }
+      .box-1 {
+        width: 400px;
+        height: 300px;
+        padding: 10px;
+        margin: 200px 15px 40px 0px;
+
+        background-color: rgba(6, 91, 161, 0.478);
+        border: none;
+        border-radius: 20px;
+        transition: 0.5s;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .box-2 {
+        width: 400px;
+        height: 300px;
+        padding: 10px;
+        margin: 200px 15px 40px 0px;
+
+        background-color: rgba(6, 91, 161, 0.478);
+        border: none;
+        border-radius: 20px;
+        transition: 0.5s;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .box-3 {
+        width: 400px;
+        height: 300px;
+        padding: 10px;
+        margin: 200px 15px 40px 0px;
+
+        background-color: rgba(6, 91, 161, 0.478);
+        border: none;
+        border-radius: 20px;
+        transition: 0.5s;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .box-4 {
+        width: 400px;
+        height: 300px;
+        padding: 10px;
+        margin: 200px 15px 40px 0px;
+
+        background-color: rgba(6, 91, 161, 0.478);
+        border: none;
+        border-radius: 20px;
+        transition: 0.5s;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .box-5 {
+        width: 400px;
+        height: 300px;
+        padding: 10px;
+        margin: 200px 15px 40px 0px;
+
+        background-color: rgba(6, 91, 161, 0.478);
+        border: none;
+        border-radius: 20px;
+        transition: 0.4s;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .box-1:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .box-2:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .box-3:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .box-4:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .box-5:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .text-big-in-box {
+        font-size: 2.8rem;
+        font-family: "Oswald", sans-serif;
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        margin: 0px 0px 0px 0px;
+        color: yellow;
+      }
+      .text-time-in-box {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        font-size: 20px;
+        color: yellow;
+        margin: 0px 0px 5px 0px;
+      }
+      .text-para-in-box {
+        font-size: 18px;
+        text-align: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(240, 236, 236);
+      }
+      .drop-button-inbox {
+        text-align: center;
+        margin: 10px 0px 5px 0px;
+      }
+      .btn-in-box {
+        padding: 10px;
+
+        width: 50%;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-image: linear-gradient(
+          to right,
+          rgb(0, 47, 255),
+          rgb(0, 102, 255)
+        );
+        box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.2),
+          0 2px 0px 0 rgba(0, 0, 0, 0.19);
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 14px;
+      }
+      .btn-in-box:hover {
+        cursor: pointer;
+        background-image: linear-gradient(
+          to right,
+          rgb(16, 57, 242),
+          rgb(25, 124, 246)
+        );
+      }
+      .footer-design {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.5rem;
+        font-family: "Poppins", sans-serif;
+        padding-top: 20px;
+        height: 10vh;
+        color: azure;
+        background-color: rgba(0, 81, 255, 0.488);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar background">
+      <div class="logo">
+        <h1>
+          <a href="index.html"
+            >W<b style="color: yellow; font-weight: bolder">e</b>ather</a
+          >
+        </h1>
+      </div>
+      <div class="mid-search">
+        <input type="text" name="" id="name" /><button class="btn">
+          Search
+        </button>
+      </div>
+      <div class="day">
+        <h2 id="date"><a href="">Fri, 4 August, 2023</a></h2>
+      </div>
+    </nav>
+    <section class="main background">
+      <p class="text-big">20C</p>
+      <p class="text-date">Ind, Fri, 4 August, 2023</p>
+      <p class="text-small">
+        "Mist weather, a mystical embrace of nature's veiled charm. Amidst the
+        whispering fog, secrets unfold, and the world softens into a dreamlike
+        haze."
+      </p>
+      <p>
+        <button class="btn-big">Show Details</button>
+      </p>
+      <div class="big-box">
+        <div class="box-1">
+          <p class="text-big-in-box">18C</p>
+          <p class="text-time-in-box">After -3 hours</p>
+          <p class="text-para-in-box">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. In velit
+            iusto dolorem dicta. Nulla sunt expedita repudiandae rem quasi,
+          </p>
+          <p class="drop-button-inbox">
+            <button class="btn-in-box">Detailse</button>
+          </p>
+        </div>
+        <div class="box-2">
+          <p class="text-big-in-box">26C</p>
+          <p class="text-time-in-box">After -5 hours</p>
+          <p class="text-para-in-box">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. In velit
+            iusto dolorem dicta. Nulla sunt expedita repudiandae rem quasi,
+          </p>
+          <p class="drop-button-inbox">
+            <button class="btn-in-box">Detailse</button>
+          </p>
+        </div>
+        <div class="box-3">
+          <p class="text-big-in-box">30C</p>
+          <p class="text-time-in-box">After -2 hours</p>
+          <p class="text-para-in-box">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. In velit
+            iusto dolorem dicta. Nulla sunt expedita repudiandae rem quasi,
+          </p>
+          <p class="drop-button-inbox">
+            <button class="btn-in-box">Detailse</button>
+          </p>
+        </div>
+        <div class="box-4">
+          <p class="text-big-in-box">26C</p>
+          <p class="text-time-in-box">After -4 hours</p>
+          <p class="text-para-in-box">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. In velit
+            iusto dolorem dicta. Nulla sunt expedita repudiandae rem quasi,
+          </p>
+          <p class="drop-button-inbox">
+            <button class="btn-in-box">Detailse</button>
+          </p>
+        </div>
+        <div class="box-5">
+          <p class="text-big-in-box">18C</p>
+          <p class="text-time-in-box">After -3 hours</p>
+          <p class="text-para-in-box">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. In velit
+            iusto dolorem dicta. Nulla sunt expedita repudiandae rem quasi,
+          </p>
+          <p class="drop-button-inbox">
+            <button class="btn-in-box">Detailse</button>
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="footer-design background">&copy; Footer</footer>
+    <script>
+      let a;
+      let date;
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      setInterval(() => {
+        a = new Date();
+        date = a.toLocaleDateString(undefined, options);
+        document.getElementById("date").innerHTML = date;
+      });
+    </script>
+  </body>
 </html>
