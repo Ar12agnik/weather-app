@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -85,8 +86,10 @@
         color: black;
         padding: 8px;
       }
+      
       .background {
-        background-image: url("img/bjark-DZ975EkUJH0-unsplash.jpg");
+        
+        background-image: url("https://images.unsplash.com/photo-1560017896-a6bf1e2acfb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80");
         background-color: rgba(0, 119, 255, 0.601);
         background-size: cover;
         background-blend-mode: darken;
@@ -158,6 +161,7 @@
     </style>
   </head>
   <body>
+    {% load static %}
     <nav class="navbar background">
       <div class="logo">
         <h1>W<b style="color: yellow; font-weight: bolder">e</b>ather</h1>
