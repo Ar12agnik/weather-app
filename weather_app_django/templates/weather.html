@@ -277,6 +277,61 @@
         color: azure;
         background-color: rgba(0, 81, 255, 0.488);
       }
+      .popup{
+        width: 500px;
+        max-width: 80%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transition: 200ms ease-in-out;
+        transform: translate(-50%, -50%)scale(0);
+        z-index: 10;
+        background-color: rgb(245, 245, 246);
+        border: none;
+        border-radius: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+      }
+      .popup.active{
+        transform: translate(-50%,-50%)scale(1);
+      }
+      .header{
+        display: flex;
+        justify-content: space-between;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 15px;
+      }
+      .header h3{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+      }
+      .close-btn{
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 1.25rem;
+        font-weight: bolder;
+      }
+      .popup-body{
+        padding: 10px 15px;
+        text-align: center;
+      }
+      #overlay{
+        position: fixed;
+        opacity: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        pointer-events: none;
+      }
+      #overlay.active{
+        opacity: 1;
+        pointer-events: all;
+      }
     </style>
   </head>
   <body>
@@ -308,7 +363,12 @@
       </pre>
       </p>
       <p>
-        <button class="btn-big">Show Details</button>
+        <button data-popup-target="#popup" class="btn-big">Show Details</button>
+        <div class="popup" id="popup">
+          <div class="header"><div class="heading"><h3>Lorem ipsum dolor</h3></div><button data-close-btn class="close-btn">&times;</button></div>
+          <div class="popup-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam dolorum, odit, accusamus, error est natus consectetur dolores labore culpa debitis suscipit eaque adipisci sapiente ab consequuntur reiciendis laboriosam architecto!</div>
+        </div>
+        <div id="overlay"></div>
       </p>
       <div class="big-box">
         <div class="box-1">
@@ -366,6 +426,7 @@
     </section>
     <footer class="footer-design background">&copy; Footer</footer>
     <script>
+      //Date Update
       let a;
       let date;
       const options = {
@@ -379,6 +440,49 @@
         date = a.toLocaleDateString(undefined, options);
         document.getElementById("date").innerHTML = date;
       });
+     //Popup - setting
+     const openPopupBtn = document.querySelectorAll('[data-popup-target]');
+const closePopupBtn = document.querySelectorAll('[data-close-btn]'); // Corrected attribute name
+const overlay = document.getElementById('overlay');
+
+openPopupBtn.forEach(button => {
+  button.addEventListener('click', () => {
+    const popup = document.querySelector(button.dataset.popupTarget);
+    openPopup(popup);
+  });
+});
+
+closePopupBtn.forEach(button => {
+  button.addEventListener('click', () => {
+    const popup = button.closest('.popup');
+    closePopup(popup);
+  });
+});
+
+overlay.addEventListener('click', () => {
+  const popups = document.querySelectorAll('.popup.active'); // Changed 'button' to 'document' and 'popup' to 'popups'
+  popups.forEach(popup => {
+    closePopup(popup);
+  });
+});
+
+function openPopup(popup) {
+  if (popup == null) return;
+  popup.classList.add('active');
+  overlay.classList.add('active');
+}
+
+function closePopup(popup) {
+  if (popup == null) return;
+  popup.classList.remove('active');
+  overlay.classList.remove('active');
+}
+
+//***************************************************************************************************//
+/* Warning: Please don't touch the popup-code , it's still needs more design so be care full. 
+   So be carefull when you works on backend.*/
+
+
     </script>
   </body>
 </html>
