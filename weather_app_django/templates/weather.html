@@ -366,9 +366,12 @@
         </h1>
       </div>
       <div class="mid-search">
-        <input type="text" name="" id="name" /><button class="btn">
+        <form action="weather" method="get">
+        
+        <input type="text" name="Location" id="name" /><button class="btn">
           Search
         </button>
+      </form>
       </div>
       <div class="day">
         <h2 id="date"><a href="">Fri, 4 August, 2023</a></h2>
@@ -379,6 +382,7 @@
       <p class="text-date">last updated {{last_updated}}</p>
       <p class="text-small">
         <pre class="text-small">
+        location: {{location}}
         feels like:{{feelslike_c}}
         wind speed (miles/hr):{{wind_mph}}   wind direction:{{wind_degree}} {{wind_dir}}
         Pressure(in milibars):{{pressure_mb}} 
