@@ -42,5 +42,26 @@ def weather(request):
     humidity = breif_report['current']['humidity']
     feelslike_c = breif_report['current']['feelslike_c']
     uv = breif_report['current']['uv']
-    params={'last_updated':last_updated,'temp_c':temp_c,'temp_f':temp_f,'condition_text':condition_text,'condition_icon':condition_icon,'wind_mph':wind_mph,'wind_kph':wind_kph,'wind_degree':wind_degree,'wind_dir':wind_dir,'pressure_mb':pressure_mb,'precip_in':precip_in,'humidity':humidity,'feelslike_c':feelslike_c,'uv':uv,'5am_8am':avg_4hr_temp[0],'9am_12am':avg_4hr_temp[1],'1pm_4pm':avg_4hr_temp[2],'5pm_8pm':avg_4hr_temp[3],'9pm_12pm':avg_4hr_temp[4]}
+    precip_mm=breif_report["current"]['precip_mm']
+    vis_km=breif_report["current"]['vis_km']
+    gust_mph=breif_report["current"]['gust_mph']
+    condition=breif_report['forecast']['forecastday'][0]['day']['condition']['text']
+    daily_chance_of_rain=breif_report['forecast']['forecastday'][0]['day']['daily_chance_of_rain']
+    daily_chance_of_snow=breif_report['forecast']['forecastday'][0]['day']['daily_chance_of_snow']
+    #astro
+    sunrise=breif_report['forecast']['forecastday'][0]['astro']['sunrise']
+    sunset=breif_report['forecast']['forecastday'][0]['astro']['sunset']
+    moonrise=breif_report['forecast']['forecastday'][0]['astro']['moonrise']
+    moonset=breif_report['forecast']['forecastday'][0]['astro']['moonset']
+    moon_phase=breif_report['forecast']['forecastday'][0]['astro']['moon_phase']
+    is_moon_up=bool(breif_report['forecast']['forecastday'][0]['astro']['is_moon_up'])
+    if is_moon_up:
+        is_sun_up='no'
+        is_moon_up='yes'
+    else:
+        is_moon_up='no'
+        is_sun_up='yes'
+    print(is_sun_up)
+    
+    params={'last_updated':last_updated,'temp_c':temp_c,'temp_f':temp_f,'condition_text':condition_text,'condition_icon':condition_icon,'wind_mph':wind_mph,'wind_kph':wind_kph,'wind_degree':wind_degree,'sunrise':sunrise,'gust_mph':gust_mph,'condition':condition,'daily_chance_of_snow':daily_chance_of_snow,'daily_chance_of_rain':daily_chance_of_rain,"vis_km":vis_km,'wind_dir':wind_dir,'pressure_mb':pressure_mb,'precip_in':precip_in,'humidity':humidity,'feelslike_c':feelslike_c,'uv':uv,'precip_mm':precip_mm,'5am_8am':avg_4hr_temp[0],'9am_12am':avg_4hr_temp[1],'1pm_4pm':avg_4hr_temp[2],'5pm_8pm':avg_4hr_temp[3],'9pm_12pm':avg_4hr_temp[4],'sunset':sunset,'moonrise':moonrise,'moonset':moonset,'moon_phase':moon_phase,'is_moon_up':is_moon_up,'is_sun_up':is_sun_up}
     return render(request,'weather.html',params)
