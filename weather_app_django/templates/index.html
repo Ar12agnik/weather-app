@@ -169,18 +169,20 @@
       </div>
       <div class="menu">
         <ul>
+          <li><a href="">Home</a></li>
           <li><a href="">About</a></li>
           <li><a href="">Rader</a></li>
           <li><a href="">Menu</a></li>
-          <li><a href="weather.html">Weather</a></li>
-          <li><a href="">Home</a></li>
+          <li><a href="">Weather</a></li>
         </ul>
       </div>
       <div class="search">
-        <input type="text" name="search" id="search" /><button class="btn">
+        <form action="weather" method="get">
+        <input type="text" name="Location" id="search" /><button class="btn">
           Search
         </button>
-      </div>
+      </form>
+    </div>
     </nav>
     <section class="from background">
       <p class="text-big">Weather app</p>
