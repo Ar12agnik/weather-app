@@ -112,10 +112,10 @@
         background-color: transparent;
         color: yellow;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
         font-size: 18px;
       }
       .btn-big:hover {
+        cursor: pointer;
         background-color: yellow;
         border: none;
         color: black;
@@ -286,10 +286,11 @@
         transition: 200ms ease-in-out;
         transform: translate(-50%, -50%)scale(0);
         z-index: 10;
-        background-color: rgb(245, 245, 246);
+        background-color: white;
         border: none;
         border-radius: 20px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
         
       }
       .popup.active{
@@ -301,22 +302,38 @@
         border: none;
         border-radius: 20px;
         padding: 10px 15px;
+        
+        
+
       }
       .header h3{
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Oswald", sans-serif;
+        font-family: "Poppins", sans-serif;
         text-align: center;
+        font-size: 1.50rem;
+        background-color:  rgb(0, 76, 255);
+        border-radius: 80px;
+        width: 100%;
+        padding: 10px 10px 10px 10px;
+        color: antiquewhite;
+
       }
       .close-btn{
         cursor: pointer;
         border: none;
         outline: none;
-        background: none;
-        font-size: 1.25rem;
+        padding: 10px;
+        font-size: 1.60rem;
         font-weight: bolder;
+        background-color: white;
+        
+      
       }
+     
       .popup-body{
-        padding: 10px 15px;
+        padding: 5px 25px 20px 20px;
         text-align: center;
+        font-size: 1.50rem;
       }
       #overlay{
         position: fixed;
@@ -339,7 +356,7 @@
       <div class="logo">
         <h1>
           <a href="index.html"
-            >W<b style="color: yellow; font-weight: bolder">e</b>ather</a
+            >W<b style="color: yellow; font-weight: bolder">e</b>atherV<b style="color: yellow; font-weight: bolder">e</b>rse</a
           >
         </h1>
       </div>
@@ -365,9 +382,8 @@
       <p>
         <button data-popup-target="#popup" class="btn-big">Show Details</button>
         <div class="popup" id="popup">
-          <div class="header"><div class="heading"><h3>Weather details</h3></div><button data-close-btn class="close-btn">&times;</button></div>
-
-    <div class="popup-body">precrpitation expected in mm{{precip_mm}} <br>humidity:{{humidity}} <br>expected intensity of ultraviolet (UV) radiation: {{uv}}<br> visibility in km: {{vis_km}} <br> gust in miles per hour: {{gust_mph}} <br>chances of rain: {{daily_chance_of_rain}}%<br> chance of snow {{daily_chance_of_snow}}%<br> possible condition {{condition}}<br>sunrise: {{sunrise}}<br>sunset: {{sunset}}<br> moonrise: {{moonrise}}<br> moonset: {{moonset}}<br> moon phase: {{moon_phase}}<br>moon is up? {{is_moon_up}}<br>sun is up? {{is_sun_up}}</div>
+          <div class="header"><div class="heading"><h3>Lorem ipsum dolor</h3></div><button data-close-btn class="close-btn">&times;</button></div>
+          <div class="popup-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam dolorum, odit, accusamus, error est natus consectetur dolores labore culpa debitis suscipit eaque adipisci sapiente ab consequuntur reiciendis laboriosam architecto!</div>
         </div>
         <div id="overlay"></div>
       </p>
@@ -425,7 +441,7 @@
         </div>
       </div>
     </section>
-    <footer class="footer-design background">&copy; Footer</footer>
+    <footer class="footer-design background">&copy; WeatherVerse</footer>
     <script>
       //Date Update
       let a;
@@ -478,10 +494,6 @@ function closePopup(popup) {
   popup.classList.remove('active');
   overlay.classList.remove('active');
 }
-
-//***************************************************************************************************//
-/* Warning: Please don't touch the popup-code , it's still needs more design so be care full. 
-   So be carefull when you works on backend.*/
 
 
     </script>
