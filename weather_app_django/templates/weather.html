@@ -298,7 +298,7 @@
       }
       .header{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         border: none;
         border-radius: 20px;
         padding: 10px 15px;
@@ -313,11 +313,16 @@
         font-size: 1.50rem;
         background-color:  rgb(0, 76, 255);
         border-radius: 80px;
-        width: 100%;
-        padding: 10px 10px 10px 10px;
+        padding: 10px 20px 10px 20px;
         color: antiquewhite;
 
       }
+       .space-close-btn {
+        margin-left: 100px;
+        position: absolute;
+        top: 2%;
+        left: 70%;
+      } 
       .close-btn{
         cursor: pointer;
         border: none;
@@ -331,8 +336,8 @@
       }
      
       .popup-body{
-        padding: 5px 25px 20px 20px;
-        text-align: center;
+        padding: 5px 50px 20px 50px;
+        text-align: left;
         font-size: 1.50rem;
       }
       #overlay{
@@ -382,7 +387,8 @@
       <p>
         <button data-popup-target="#popup" class="btn-big">Show Details</button>
         <div class="popup" id="popup">
-          <div class="header"><div class="heading"><h3>Lorem ipsum dolor</h3></div><button data-close-btn class="close-btn">&times;</button></div>
+          <div class="header"><div class="heading"><h3>Lorem ipsum dolor</h3></div></div>
+           <div class="space-close-btn"><button data-close-btn class="close-btn">&times;</button></div>
           <div class="popup-body">precrpitation expected in mm{{precip_mm}} <br>humidity:{{humidity}} <br>expected intensity of ultraviolet (UV) radiation: {{uv}}<br> visibility in km: {{vis_km}} <br> gust in miles per hour: {{gust_mph}} <br>chances of rain: {{daily_chance_of_rain}}%<br> chance of snow {{daily_chance_of_snow}}%<br> possible condition {{condition}}<br>sunrise: {{sunrise}}<br>sunset: {{sunset}}<br> moonrise: {{moonrise}}<br> moonset: {{moonset}}<br> moon phase: {{moon_phase}}<br>moon is up? {{is_moon_up}}<br>sun is up? {{is_sun_up}}</div>
         </div>
         <div id="overlay"></div>
