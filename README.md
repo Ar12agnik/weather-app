@@ -1,5 +1,5 @@
 
-# <h1>SkyCast</h1>
+# <h1>WeatherVerse</h1>
 
 
 Our weather app provides near-accurate weather reports 
@@ -7,6 +7,7 @@ Our weather app provides near-accurate weather reports
 ## Features
 
 - hourly weather report
+- every detail
 - 3 day report
 - alearts
 
@@ -25,12 +26,12 @@ To run this app locally, follow these steps:
 
 2. Install the dependencies:
    ```bash
-   npm install
+   pip install django
    ```
 
 3. Start the development server:
    ```bash
-   npm start
+   Python manage.py runserver
    ```
 
 ## Technologies Used
@@ -44,7 +45,7 @@ To use the weather API in this app, you'll need to obtain an API key:
 
 1. Go to [WEATHERAPI](https://www.weatherapi.com/) and sign up for an account.
 2. Once registered, select a plan, and then you'll receive an API key.
-3. Copy the API key and replace `YOUR_API_KEY` in `src/api/config.js` with your actual API key.
+3. Copy the API key and replace `YOUR_API_KEY` in `main.py` with your actual API key.
 
 ## Screenshots
 
