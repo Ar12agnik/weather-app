@@ -1,7 +1,7 @@
 import requests
 import json
 def get_weather_report(city_name):
-    report=requests.get(f'http://api.weatherapi.com/v1/forecast.json?key=d8519cfb1cfb431f956164255232803&q={city_name}&days=1&aqi=yes&alerts=no')
+    report=requests.get(f'http://api.weatherapi.com/v1/forecast.json?key={YOUR_API_KEY}&q={city_name}&days=1&aqi=yes&alerts=no')
     #print(report.text)
     breif_report=json.loads(report.text)
     return breif_report
