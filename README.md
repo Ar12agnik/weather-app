@@ -50,6 +50,7 @@ To use the weather API in this app, you'll need to obtain an API key:
 ## Screenshots
 
 ![Screenshot 1](screenshot.png)
+![Screenshot 2](screenshot2.png)
 
 
 ## Contributing
