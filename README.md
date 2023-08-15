@@ -48,9 +48,9 @@ To use the weather API in this app, you'll need to obtain an API key:
 3. Copy the API key and replace `YOUR_API_KEY` in `main.py` with your actual API key.
 
 ## Screenshots
-
-![Screenshot 1](screenshot.png)
 ![Screenshot 2](screenshort2.png)
+![Screenshot 1](screenshot.png)
+
 
 
 ## Contributing
