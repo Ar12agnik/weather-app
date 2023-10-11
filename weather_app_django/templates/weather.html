@@ -7,21 +7,21 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins&family=Space+Grotesk:wght@700&family=Ubuntu:ital,wght@0,400;1,700&display=swap");
 
-      * {
+      
+      body {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
-      /* body {
-        box-sizing: border-box;
-      } */
       .background {
         background-image: url("https://images.unsplash.com/photo-1560017896-a6bf1e2acfb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80");
-        background-repeat: no-repeat;
+        background-color: rgba(0, 119, 255, 0.601);
         background-size: cover;
+        background-repeat: no-repeat;
         background-blend-mode: darken;
       }
       section {
-        height: 87vh;
+        height: 80vh;
       }
       .navbar {
         display: flex;
@@ -29,7 +29,6 @@
         padding: 20px;
         width: 100%;
         height: 4vh;
-        background-color: rgba(0, 119, 255, 0.601);
         position: fixed;
       }
       .logo h1 a {
@@ -42,24 +41,25 @@
         padding: 10px;
         width: 60%;
         border: none;
-        border-radius: 5px;
+        border-radius: 20px;
         background-color: rgba(162, 190, 249, 0.348);
       }
       .btn {
         margin-left: 6px;
-        padding: 8px;
-        border: 3px solid yellow;
-        border-radius: 5px;
-        background-color: transparent;
-        color: yellow;
+        padding: 10px;
+        border: 1px outset yellow;
+        border-radius: 20px;
+        background-color: yellow;
+        color: black;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 15px;
       }
       .btn:hover {
         cursor: pointer;
-        background-color: yellow;
+        background-color: rgba(254, 254, 50, 0.927);
+        border: 1px outset yellow;
         border: none;
-        padding: 10px;
+       
         color: black;
       }
 
@@ -80,15 +80,14 @@
         flex-direction: column;
         padding: 100px;
 
-        background-color: rgba(0, 119, 255, 0.601);
+        
       }
 
       .text-big {
-        font-size: 4rem;
+        font-size: 4.5rem;
         font-family: "Oswald", sans-serif;
         font-family: "Poppins", sans-serif;
-        margin: 5% 100% 1px 50px;
-
+        margin: 5% 100% 1px 45px;
         color: yellow;
       }
       .text-date {
@@ -98,38 +97,40 @@
         color: yellow;
       }
       .text-small {
-        font-size: 20px;
+        font-size: 1.5rem;
         font-family: "Space Grotesk", sans-serif;
-        margin: 0px 40% 0px 10px;
+        padding-left:4%;
+        padding-right: 50%;
         color: rgb(240, 236, 236);
       }
       .btn-big {
         margin-left: 50px;
-        padding: 8px;
-        border: 3px solid yellow;
-        border-radius: 20px;
+        padding: 10px;
+        border:none;
+        border-radius: 10px;
         width: 15%;
-        background-color: transparent;
-        color: yellow;
+        background-color: yellow;
+        color: black;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         font-size: 18px;
+        transition:all 5ms ease-in ;
       }
       .btn-big:hover {
+        transform: translateY(-3%);
         cursor: pointer;
-        background-color: yellow;
+        background-color: rgba(255, 255, 0, 0.815);
         border: none;
         color: black;
-        padding: 10px;
+        
       }
       .big-box {
         display: flex;
       }
       .box-1 {
-        width: 400px;
-        height: 210px;
+        width: 450px;
+        height: 230px;
         padding: 10px;
-        margin: 125px 15px 40px 0px;
-
+        margin: 55px 15px 40px 0px;
         background-color: rgba(6, 91, 161, 0.478);
         border: none;
         border-radius: 20px;
@@ -138,11 +139,10 @@
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
       .box-2 {
-        width: 400px;
-        height: 210px;
+        width: 450px;
+        height: 230px;
         padding: 10px;
-        margin: 125px 15px 40px 0px;
-
+        margin: 55px 15px 40px 0px;
         background-color: rgba(6, 91, 161, 0.478);
         border: none;
         border-radius: 20px;
@@ -151,11 +151,10 @@
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
       .box-3 {
-        width: 400px;
-        height: 210px;
+        width: 450px;
+        height: 230px;
         padding: 10px;
-        margin: 125px 15px 40px 0px;
-
+        margin: 55px 15px 40px 0px;
         background-color: rgba(6, 91, 161, 0.478);
         border: none;
         border-radius: 20px;
@@ -164,11 +163,10 @@
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
       .box-4 {
-        width: 400px;
-        height: 210px;
+        width: 450px;
+        height: 230px;
         padding: 10px;
-        margin: 125px 15px 40px 0px;
-
+        margin: 55px 15px 40px 0px;
         background-color: rgba(6, 91, 161, 0.478);
         border: none;
         border-radius: 20px;
@@ -177,11 +175,10 @@
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
       .box-5 {
-        width: 400px;
-        height: 210px;
+        width: 450px;
+        height: 230px;
         padding: 10px;
-        margin: 125px 15px 40px 0px;
-
+        margin: 55px 15px 40px 0px;
         background-color: rgba(6, 91, 161, 0.478);
         border: none;
         border-radius: 20px;
@@ -267,6 +264,7 @@
         );
       }
       .footer-design {
+        margin-top:100px ;
         display: flex;
         justify-content: center;
         text-align: center;
@@ -275,7 +273,7 @@
         padding-top: 20px;
         height: 10vh;
         color: azure;
-        background-color: rgba(0, 81, 255, 0.488);
+       
       }
       .popup{
         width: 500px;
@@ -354,9 +352,138 @@
         opacity: 1;
         pointer-events: all;
       }
+
+      /* Mobile responsiveness */
+      @media only screen and (max-width: 1000px){
+        section{
+          height: 100vh;
+          width: 100%;
+        }
+        .text-big {
+        font-size: 6rem;
+        margin-top: 20px;
+        margin-left: 10px;
+        font-family: "Oswald", sans-serif;
+        font-family: "Poppins", sans-serif;
+       
+        color: yellow;
+      }
+      .text-date {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+       margin-bottom: 20px;
+       margin-left: 10px;
+        font-size: 15px;
+        color: yellow;
+      }
+      .text-small {
+        margin-left: 0px;
+        font-size: 1rem;
+        font-family: "Space Grotesk", sans-serif;
+       
+        color: rgb(240, 236, 236);
+      }
+
+      .big-box {
+        display: flex;
+        flex-wrap: wrap;
+       
+       
+      }
+      .btn-big {
+       
+        padding: 20px;
+        border:none;
+        border-radius: 10px;
+        width: 100%;
+        background-color: yellow;
+        color: black;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.8rem;
+        margin-top: 20%;
+        transition:all 5ms ease-in ;
+      
+      }
+     
+      .box-1 {
+        margin-bottom: 0px;
+        height: 250px;
+        padding: 10px;
+        width: 100%;
+        background-color: rgba(6, 91, 161, 0.478);
+        border: none;
+        border-radius: 10px;
+        transition: 0.5s;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .box-2 {
+        margin-bottom: 0px;
+        height: 250px;
+        padding: 10px;
+        width: 100%;
+        background-color: rgba(6, 91, 161, 0.478);
+        border: none;
+        border-radius: 10px;
+        transition: 0.5s;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .box-3 {
+        margin-bottom: 0px;
+        height: 250px;
+        padding: 10px;
+        width: 100%;
+        background-color: rgba(6, 91, 161, 0.478);
+        border: none;
+        border-radius: 10px;
+        transition: 0.5s;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .box-4 {
+        margin-bottom: 0px;
+        height: 250px;
+        padding: 10px;
+        width: 100%;
+        background-color: rgba(6, 91, 161, 0.478);
+        border: none;
+        border-radius: 10px;
+        transition: 0.5s;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .box-5 {
+        margin-bottom: 0px;
+        height: 250px;
+        padding: 10px;
+        width: 100%;
+        background-color: rgba(6, 91, 161, 0.478);
+        border: none;
+        border-radius: 10px;
+        transition: 0.5s;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .footer-design {
+        margin-top:180vh ;
+        width: 150%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.5rem;
+        font-family: "Poppins", sans-serif;
+        padding-top: 20px;
+        height: 10vh;
+        color: azure;
+       
+      }
+
+
+
+      }
     </style>
   </head>
-  <body>
+  <body class="background">
     <nav class="navbar background">
       <div class="logo">
         <h1>
@@ -377,24 +504,26 @@
         <h2 id="date"><a href="">Fri, 4 August, 2023</a></h2>
       </div>
     </nav>
-    <section class="main background">
+    <section class="main">
       <p class="text-big">{{temp_c}}°C</p>
       <p class="text-date">last updated {{last_updated}}</p>
       <p class="text-small">
-        <pre class="text-small">
+        
         location: {{location}}
-        feels like:{{feelslike_c}}
-        wind speed (miles/hr):{{wind_mph}}   wind direction:{{wind_degree}} {{wind_dir}}
-        Pressure(in milibars):{{pressure_mb}} 
-      </pre>
+        feels like: {{feelslike_c}}
+        wind speed (miles/hr): {{wind_mph}}   
+        wind direction: {{wind_degree}} {{wind_dir}}
+        Pressure(in milibars): {{pressure_mb}} 
+      </p>
+      <button data-popup-target="#popup" class="btn-big">Show Details</button>
+      <div class="popup" id="popup">
+        <div class="header"><div class="heading"><h3>weather detailes</h3></div></div>
+         <div class="space-close-btn"><button data-close-btn class="close-btn">&times;</button></div>
+        <div class="popup-body">precrpitation expected in mm: {{precip_mm}} <br>humidity:{{humidity}} <br>expected intensity of ultraviolet (UV) radiation: {{uv}}<br> visibility in km: {{vis_km}} <br> gust in miles per hour: {{gust_mph}} <br>chances of rain: {{daily_chance_of_rain}}%<br> chance of snow {{daily_chance_of_snow}}%<br> possible condition {{condition}}<br>sunrise: {{sunrise}}<br>sunset: {{sunset}}<br> moonrise: {{moonrise}}<br> moonset: {{moonset}}<br> moon phase: {{moon_phase}}<br>moon is up? {{is_moon_up}}<br>sun is up? {{is_sun_up}}</div>
+      </div>
       </p>
       <p>
-        <button data-popup-target="#popup" class="btn-big">Show Details</button>
-        <div class="popup" id="popup">
-          <div class="header"><div class="heading"><h3>weather detailes</h3></div></div>
-           <div class="space-close-btn"><button data-close-btn class="close-btn">&times;</button></div>
-          <div class="popup-body">precrpitation expected in mm: {{precip_mm}} <br>humidity:{{humidity}} <br>expected intensity of ultraviolet (UV) radiation: {{uv}}<br> visibility in km: {{vis_km}} <br> gust in miles per hour: {{gust_mph}} <br>chances of rain: {{daily_chance_of_rain}}%<br> chance of snow {{daily_chance_of_snow}}%<br> possible condition {{condition}}<br>sunrise: {{sunrise}}<br>sunset: {{sunset}}<br> moonrise: {{moonrise}}<br> moonset: {{moonset}}<br> moon phase: {{moon_phase}}<br>moon is up? {{is_moon_up}}<br>sun is up? {{is_sun_up}}</div>
-        </div>
+       
         <div id="overlay"></div>
       </p>
       <div class="big-box">
